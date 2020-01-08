@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <pagesupport>
+            <general_setting>
+                <enable_fanpage>0</enable_fanpage>
+                <link_page>https://www.facebook.com/MagenestMessenger/</link_page>
+                <app_id>413438232494492</app_id>
+                <tabs_setting>timeline,events,messages</tabs_setting>
+                <small_header>true</small_header>
+                <show_cover>true</show_cover>
+                <show_facepile>true</show_facepile>
+            </general_setting>
+            <custom_setting>
+                <title_tab>Live Support</title_tab>
+                <tab_color>#1212e0</tab_color>
+                <text_color>#f5f9fa</text_color>
+                <text_font>Roboto-Regular</text_font>
+                <box_size>medium</box_size>
+            </custom_setting>
+        </pagesupport>
+        <messengerchat>
+            <messenger_setting>
+                <enable_messenger>0</enable_messenger>
+                <greeting_message>Hi! How can we help you?</greeting_message>
+                <theme_color>#0084ff</theme_color>
+                <page_id>982682521911150</page_id>
+            </messenger_setting>
+        </messengerchat>
+    </default>
+</config>

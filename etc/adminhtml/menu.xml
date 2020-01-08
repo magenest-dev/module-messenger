@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magenest_Messenger::chatbox"
+             title="Messenger Chatbox"
+             module="Magenest_Messenger"
+             sortOrder="50"
+             parent="Magento_Backend::marketing"
+             resource="Magenest_Messenger::chatbox"/>
+        <add id="Magenest_Messenger::dashboard_data"
+             title="User Statistics"
+             module="Magenest_Messenger"
+             sortOrder="55"
+             parent="Magenest_Messenger::chatbox"
+             action="messenger/chatbox/dashboard"
+             resource="Magenest_Messenger::dashboard_data"/>
+        <add id="Magenest_Messenger::messengersupport"
+             title="Messenger Support Live"
+             module="Magenest_Messenger"
+             sortOrder="70"
+             parent="Magenest_Messenger::chatbox"
+             action="adminhtml/system_config/edit/section/pagesupport"
+             resource="Magenest_Messenger::messengersupport"/>
+
+        <add id="Magenest_Messenger::stat"
+             title="Manage Data User"
+             module="Magenest_Messenger"
+             sortOrder="80"
+             parent="Magenest_Messenger::chatbox"
+             action="messenger/chatbox/index"
+             resource="Magenest_Messenger::stat"/>
+    </menu>
+</config>

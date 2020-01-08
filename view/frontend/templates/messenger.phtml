@@ -1,0 +1,127 @@
+<?php
+/**
+ * messenger
+ *
+ * @copyright Copyright © 2018 Magenest. All rights reserved.
+ * @author    sonstephendo@gmail.com
+ */
+?>
+<?php /** @var \Magenest\Messenger\Block\Chatbox\MessengerSupport $block */ ?>
+<?php $config = $block->getConfig(); ?>
+<?php if ($config['enable_fanpage'] === '1') { ?>
+    <div id="chatbox" class="chatbox " style="width: <?= $config['box_width'] ?>px ;">
+        <div id="chatbox_en" class="chatbox_en" style="display: block;">
+            <div id="openchat" class="title_open_chatbox"
+                 style=" display: block;
+                         background-color: <?php echo $config['tab_color'] ?>;
+                         font-family: <?php echo $config['text_font'] ?>;
+                         color: <?php echo $config['text_color']; ?>">
+                <?php echo $config['title_tab']; ?>
+            </div>
+
+            <div class="frm_chatbox"
+                 style="display: none;
+                         width: <?= $config['box_width'] ?>px ;
+                         height: <?= $config['box_height'] ?>px ;">
+                <div class="title_close_chatbox"
+                     style="background-color: <?php echo $config['tab_color'] ?>;
+                             font-family: <?php echo $config['text_font'] ?>;
+                             color: <?php echo $config['text_color']; ?>">
+                    <?php echo $config['title_tab']; ?></div>
+                <div id="c_user" class="c_user">
+                    <div class="is_login" style="display: none;">
+                        <div id="ava_user" class="ava_user">
+                            <img id="pic" src="" width="42px" height="42px"></div>
+                        <div id="na_user" class="na_user"></div>
+                    </div>
+<!--                    <div class="un_login" style="display: none;">-->
+<!--                        <button onclick="login()" id="login" class="login">--><?php //echo __('Login with Facebook'); ?>
+<!--                        </button>-->
+<!--                    </div>-->
+                </div>
+                <div style="min-width: 180px;">
+                    <div class="fb-page"
+                         data-href="<?php echo $config['link_page'] ?>"
+                         data-tabs="<?= $config['tabs_setting'] ?>"
+                         data-small-header="<?= $config['small_header'] ?>"
+                         data-hide-cover="<?= $config['hide_cover'] ?>"
+                         data-width="<?= $config['box_width'] ?>"
+                         data-height="<?= $config['box_height'] - 100 ?>"
+                         data-show-facepile="<?= $config['show_facepile'] ?>">
+                    </div>
+                </div>
+
+                <?php if ($config['enable_messenger'] === '1') { ?>
+                    <div id="fb-root"></div>
+                    <!-- Your customer chat code -->
+                    <div class="fb-customerchat"
+                         minimized="true"
+                         attribution=setup_tool
+                         greeting_dialog_display = "fade"
+                         greeting_dialog_delay = 2
+                         logged_in_greeting="<?= $config['greeting_message'] ?>"
+                         page_id="<?= $config['page_id'] ?>"
+                         theme_color="<?= $config['theme_color'] ?>">
+                    </div>
+                <?php } ?>
+                <div class="powered-by">
+                    <a href="https://store.magenest.com/" target="__BLANK">Powered by Magenest</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } ?>
+<!-- Load Facebook SDK for JavaScript -->
+<!--    enable messenger live chat -->
+<div data-bind="scope: 'messenger'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "messenger": {
+                        "component": "Magenest_Messenger/js/view/messenger",
+                        "app_config": <?= json_encode($config) ?>
+                    }
+                }
+            }
+        }
+    }
+</script>
+<script type="text/javascript">
+
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId           : '<?= $config['app_id'] ?>',
+            autoLogAppEvents: true,
+            xfbml           : true,
+            version         : 'v3.3'
+        });
+    };
+</script>
+<?php if ($config['enable_fanpage'] === '0') { ?>
+    <?php if ($config['enable_messenger'] === '1') { ?>
+        <div id="fb-root"></div>
+        <!-- Your customer chat code -->
+        <div class="fb-customerchat"
+             minimized="true"
+             attribution=setup_tool
+             logged_in_greeting="<?= $config['greeting_message'] ?>"
+             page_id="<?= $config['page_id'] ?>"
+             theme_color="<?= $config['theme_color'] ?>">
+        </div>
+    <?php } ?>
+<?php } ?>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+

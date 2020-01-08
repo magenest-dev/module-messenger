@@ -1,0 +1,44 @@
+<div class="row chart-total">
+    <div id="linechart1" style="width: 500px; height: 500px;"></div>
+    <div id="linechart2" style="width: 500px; height: 500px;"></div>
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+	google.charts.load("current", {packages: ["corechart"]});
+	google.charts.setOnLoadCallback(drawChart);
+	
+	function drawChart() {
+		
+		var data = new google.visualization.DataTable();
+		data.addColumn('string', 'Age');
+		data.addColumn('number', 'Total');
+		
+		var dataLocation = new google.visualization.DataTable();
+		dataLocation.addColumn('string', 'Location');
+		dataLocation.addColumn('number', 'Total');
+		
+		var params = <?php echo $block->getStatUserAge(); ?>;
+		var location = <?php echo $block->getStatUserLocation(); ?>;
+		data.addRows(params);
+		dataLocation.addRows(location);
+		
+		var options = {
+			'title': 'Chart User Age',
+			'width': 1100,
+			'height': 500,
+		};
+		
+		var chart = new google.visualization.LineChart(document.getElementById('linechart1'));
+		chart.draw(data, options);
+		
+		var location_options = {
+			'title': 'Chart User Location',
+			'width': 1100,
+			'height': 500,
+		};
+		
+		var location_chart = new google.visualization.LineChart(document.getElementById('linechart2'));
+		location_chart.draw(dataLocation, location_options);
+	}
+</script>

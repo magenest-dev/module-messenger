@@ -1,0 +1,153 @@
+/*------------font-css-------------*/
+@font-face {
+    font-family: 'Archivo-Regular';
+    src: url('../fonts/Archivo-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'FjallaOne-Regular';
+    src: url('../fonts/FjallaOne-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'FrankRuhlLibre-Regular';
+    src: url('../fonts/FrankRuhlLibre-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'Karla Regular';
+    src: url('../fonts/Karla-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'PlayfairDisplay-Regular';
+    src: url('../fonts/PlayfairDisplay-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+.chatbox
+{
+    font-family: 'Roboto', sans-serif;
+    position:fixed;
+    bottom:0px;
+    right:50px;
+    z-index:999999999999999;
+    /*width:300px;*/
+    height:auto;
+    overflow:hidden;
+}
+
+.chatbox .chatbox_en .frm_chatbox
+{
+    float:left;
+    overflow:hidden;
+    display:none;
+    background-color: white;
+}
+.chatbox .chatbox_en .frm_chatbox .fb-page
+{
+    float:left;
+}
+.chatbox .chatbox_en .title_open_chatbox
+{
+    cursor: pointer;
+    z-index: 9999999999;
+    text-align: center;
+    background-size: auto 55%;
+    border-radius: 3px;
+    font-size:20px;
+    margin-top: 5px;
+}
+.chatbox .chatbox_en .title_close_chatbox
+{
+    cursor: pointer;
+    width: 100%;
+    float:left;
+    line-height: 30px;
+    z-index:9999999999;
+    font-size:20px;
+    text-align: center;
+}
+
+.chatbox .chatbox_en .c_user
+{
+    width: 100%;
+    height: 80px;
+    background-color: #eee;
+}
+
+.chatbox .chatbox_en .c_user .is_login {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.chatbox .chatbox_en .c_user .un_login {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.chatbox .chatbox_en .ava_user
+{
+    float:left;
+    margin: 5px 0 auto auto;
+}
+.chatbox .chatbox_en .na_user
+{
+    font-weight: bold;
+    float:left;
+    font-size: 14px;
+    margin: auto auto auto 7px;
+}
+
+.fb-customerchat iframe, .fb_dialog {
+    /*left: initial !important;*/
+    margin-bottom: 28pt !important;
+    right: 18pt !important;
+    z-index: 9999999 !important;
+}
+
+.chatbox .chatbox_en .login
+{
+    line-height: 25px;
+    color:white;
+    background-color: #4267b2;
+    border:0px solid #4267b2;
+    border-radius: 5px;
+    margin: 5px auto;
+}
+
+.powered-by {
+    border-top: 1px;
+    text-align: right;
+}
+
+.powered-by a {
+    font-size: 14px;
+    font-style: italic;
+    color: #90949c;
+    margin-right: 10pt;
+}

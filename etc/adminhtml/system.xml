@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="messengerconfig" translate="label" sortOrder="130">
+            <label>Messenger Live Support</label>
+        </tab>
+        <section id="pagesupport" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Fanpage Support Configuration</label>
+            <tab>messengerconfig</tab>
+            <resource>Magenest_Messenger::config_api</resource>
+            <group id="general_setting" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <field id="enable_fanpage" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Fanpage Live Support</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Enable/Disable module block on frontend. Default: Yes]]></comment>
+                </field>
+                <label>Fanpage Live Support Settings</label>
+                <field id="link_page" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Facebook Page Link</label>
+                    <comment><![CDATA[Input your facebook page. Example: <a href="https://www.facebook.com/MagenestMessenger" target="__BLANK">https://www.facebook.com/MagenestMessenger</a>]]></comment>
+                </field>
+                <field id="app_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Facebook App ID</label>
+                    <comment><![CDATA[Input your facebook app id<br/>Create facebook app as the guide: <a href="" target="__BLANK">How to create facebook app for live chat</a>.<br/> Example: 413438232494492]]></comment>
+                </field>
+                <field id="tabs_setting" translate="label comment" type="multiselect" sortOrder="15" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Tabs to render on frontend</label>
+                    <source_model>Magenest\Messenger\Model\Config\PageTabs</source_model>
+                    <comment><![CDATA[Select multiple tabs by pressing Ctrl button while selecting]]></comment>
+                </field>
+                <field id="small_header" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Use Small Header</label>
+                    <source_model>Magenest\Messenger\Model\Config\TrueFalse</source_model>
+                    <comment><![CDATA[Use the small version of the page header. Default: Yes]]></comment>
+                </field>
+                <field id="show_cover" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Show Cover Photo</label>
+                    <source_model>Magenest\Messenger\Model\Config\TrueFalse</source_model>
+                    <comment><![CDATA[Show cover photo in the header. Default: Yes]]></comment>
+                </field>
+                <field id="show_facepile" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Show Friend's Faces</label>
+                    <source_model>Magenest\Messenger\Model\Config\TrueFalse</source_model>
+                    <comment><![CDATA[Show profile photo when friends like this. Default: Yes]]></comment>
+                </field>
+            </group>
+            <group id="custom_setting" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Customize the extension</label>
+                <field id="title_tab" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Title Tab</label>
+                    <comment><![CDATA[Input the text for open tab.]]></comment>
+                </field>
+                <field id="tab_color" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Tab Color</label>
+                    <frontend_model>Magenest\Messenger\Model\Config\Color</frontend_model>
+                    <comment><![CDATA[Select color code for tabs. Default: #1212e0]]></comment>
+                </field>
+                <field id="text_color" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Text Color</label>
+                    <frontend_model>Magenest\Messenger\Model\Config\Color</frontend_model>
+                    <comment><![CDATA[Select color code for text in tabs. Default: #f5f9fa]]></comment>
+                </field>
+                <field id="text_font" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Text Font</label>
+                    <source_model>Magenest\Messenger\Model\Config\Fonts</source_model>
+                    <comment><![CDATA[Choose the font family to display from a collection of 6 best Google Web fonts]]></comment>
+                </field>
+                <field id="box_size" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Extension Box Size</label>
+                    <source_model>Magenest\Messenger\Model\Config\BoxSize</source_model>
+                    <comment><![CDATA[Choose the size to display of extension box]]></comment>
+                </field>
+            </group>
+        </section>
+        <section id="messengerchat" translate="label" sortOrder="200" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>Messenger Live Chat Configuration</label>
+            <tab>messengerconfig</tab>
+            <resource>Magenest_Messenger::config_api</resource>
+            <group id="messenger_setting" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <field id="enable_messenger" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Enable Messenger Live Chat</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Enable/Disable messenger chat on frontend. <br/> <em>Default: Yes</em>]]></comment>
+                </field>
+                <label>Messenger Live Chat Settings</label>
+                <field id="greeting_message" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Greeting Message</label>
+                    <comment>
+                        <![CDATA[A greeting that customer will see before deciding to chat.
+                         <br/> <em>Default "Hi! How can we help you?" </em>]]></comment>
+                </field>
+                <field id="theme_color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Theme Color</label>
+                    <frontend_model>Magenest\Messenger\Model\Config\Color</frontend_model>
+                    <comment>
+                        <![CDATA[Choose colors that match your brand or website.
+                        <br/> <em>Default "#0084ff" </em>]]></comment>
+                </field>
+                <field id="page_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Page ID</label>
+                    <comment><![CDATA[Input your facebook fanpage id<br/><em>Get facebook page id from the website: <a href="https://findmyfbid.com" target="__BLANK">Find your Facebook ID</a>.<br/> Example: 982682521911150</em>]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
